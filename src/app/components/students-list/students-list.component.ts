@@ -1,7 +1,8 @@
 import { Student } from './../../shared/student';
 import { ApiService } from './../../shared/api.service';
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-students-list',
@@ -12,7 +13,7 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 export class StudentsListComponent implements OnInit {
   StudentData: any = [];
   dataSource: MatTableDataSource<Student>;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   displayedColumns: string[] = ['_id', 'student_name', 'student_email', 'section', 'action'];
 
   constructor(private studentApi: ApiService) {
