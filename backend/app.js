@@ -7,7 +7,7 @@ let express = require('express'),
 
 // Connecting mongoDB
 mongoose.Promise = global.Promise;
-mongoose.connect(dataBaseConfig.db, {
+mongoose.connect(process.env.MONGOLAB_URI || dataBaseConfig.db, {
   useNewUrlParser: true
 }).then(() => {
     console.log('Database connected sucessfully ')
