@@ -726,7 +726,7 @@ let ApiService = class ApiService {
     constructor(http) {
         this.http = http;
         // endpoint: string = 'http://localhost:4000/api';
-        this.endpoint = '/api';
+        this.endpoint = 'api';
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpHeaders"]().set('Content-Type', 'application/json');
     }
     // Add student
