@@ -7,7 +7,7 @@ let express = require('express'),
 
 // Connecting mongoDB
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGOLAB_URI || dataBaseConfig.db, {
+mongoose.connect(process.env.PORT || 8080, {
   useNewUrlParser: true
 }).then(() => {
     console.log('Database connected sucessfully ')
@@ -25,11 +25,14 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'dist/angular8-meanstack-angular-material')));
-app.use('/', express.static(path.join(__dirname, 'dist/angular8-meanstack-angular-material')));
+
+// Setting up static directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// RESTful API root
 app.use('/api', studentRoute)
 
-// Create port
+// PORT
 const port = process.env.PORT || 8080;
 const server = app.listen(port, () => {
   console.log('Connected to port ' + port)
