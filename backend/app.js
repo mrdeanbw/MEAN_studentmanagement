@@ -19,6 +19,7 @@ mongoose.connect(dataBaseConfig.db, {
 
 // Set up express js port
 const studentRoute = require('./routes/student.route')
+
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -28,6 +29,7 @@ app.use(cors());
 
 // Setting up static directory
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 // RESTful API root
 app.use('/api', studentRoute)
@@ -42,6 +44,15 @@ const server = app.listen(port, host, function () {
 // Find 404 and hand over to error handler
 app.use((req, res, next) => {
   next(createError(404));
+});
+
+// Index Route
+app.get('/', (req, res) => {
+  res.send('invaild endpoint');
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 // error handler
