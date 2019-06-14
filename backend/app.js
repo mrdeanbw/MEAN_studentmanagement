@@ -28,17 +28,16 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 
 // Setting up static directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'dist/angular8-meanstack-angular-material')));
 
 
 // RESTful API root
 app.use('/api', studentRoute)
 
 // PORT
-const host = '0.0.0.0';
-const port = process.env.PORT || 3000;
-const server = app.listen(port, host, function () {
-  console.log("Server started.......");
+const port = process.env.PORT || 8000;
+server.listen(port, () => {
+  console.log("App is running on port " + port);
 });
 
 // Find 404 and hand over to error handler
@@ -52,7 +51,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
+  res.sendFile(path.join(__dirname, 'dist/angular8-meanstack-angular-material/index.html'));
 });
 
 // error handler
