@@ -33,10 +33,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', studentRoute)
 
 // PORT
-const port = process.env.PORT || 8080;
-const server = app.listen(port, () => {
-  console.log('Connected to port ' + port)
-})
+const host = '0.0.0.0';
+const port = process.env.PORT || 3000;
+const server = app.listen(port, host, function () {
+  console.log("Server started.......");
+});
 
 // Find 404 and hand over to error handler
 app.use((req, res, next) => {
