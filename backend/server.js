@@ -18,7 +18,7 @@ mongoose.connect(process.env.PORT || 8080, {
 )
 
 // Set up express js port
-const studentRoute = require('../backend/routes/student.route')
+const studentRoute = require('./routes/student.route')
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
