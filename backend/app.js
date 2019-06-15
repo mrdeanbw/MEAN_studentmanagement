@@ -36,9 +36,9 @@ app.use('/api', studentRoute)
 
 // PORT
 const port = process.env.PORT || 8000;
-server.listen(port, () => {
-  console.log("App is running on port " + port);
-});
+const server = app.listen(port, () => {
+  console.log('Connected to port ' + port)
+})
 
 // Find 404 and hand over to error handler
 app.use((req, res, next) => {
