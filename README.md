@@ -1,6 +1,6 @@
 # Angular8MeanstackAngularMaterial
 
-Step by step article on [Angular 8 MEAN Stack Tutorial – Build CRUD App with Angular Material 8 (https://www.positronx.io/angular-8-mean-stack-tutorial-build-crud-angular-material/)
+Step by step article on [Angular 8 MEAN Stack Tutorial – Build CRUD App with Angular Material 8](https://www.positronx.io/angular-8-mean-stack-tutorial-build-crud-angular-material/)
 
 ## How to run the app?
 - Run `npm install` to install required dependencies.
