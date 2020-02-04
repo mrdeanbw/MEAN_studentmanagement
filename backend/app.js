@@ -1,9 +1,9 @@
 let express = require('express'),
-  path = require('path'),
-  mongoose = require('mongoose'),
-  cors = require('cors'),
-  bodyParser = require('body-parser'),
-  dataBaseConfig = require('./database/db');
+path = require('path'),
+mongoose = require('mongoose'),
+cors = require('cors'),
+bodyParser = require('body-parser'),
+dataBaseConfig = require('./database/db');
 
 // Connecting mongoDB
 mongoose.Promise = global.Promise;

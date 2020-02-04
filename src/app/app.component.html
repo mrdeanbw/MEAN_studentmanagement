@@ -1,16 +1,29 @@
 <!-- Toolbar -->
 <mat-toolbar color="primary" class="header">
-  <div>Student Records</div>
+  <div class="container">
+    <div class="react">
+      <div class="react__spoke react__spoke--0"></div>
+      <div class="react__spoke react__spoke--1"></div>
+      <div class="react__spoke react__spoke--2"></div>
+      <div class="react__spoke--3"></div>
+    </div>
+  </div>
+  <div class="row">
+    <span> Welcome To React Class</span>
+    
+  </div>
   <span class="nav-tool-items">
     <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
   </span>
 </mat-toolbar>
+
 
 <mat-sidenav-container>
   <!-- Sidenav -->
   <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
     [fixedTopGap]>
     <mat-nav-list>
+     
       <a mat-list-item routerLinkActive="active" routerLink="/add-student">
         <mat-icon>add</mat-icon> Add Student
       </a>
@@ -18,6 +31,7 @@
         <mat-icon>format_list_bulleted</mat-icon> View Students
       </a>
     </mat-nav-list>
+   
   </mat-sidenav>
 
   <!-- Main content -->
@@ -25,3 +39,5 @@
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+
